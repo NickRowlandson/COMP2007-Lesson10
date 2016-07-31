@@ -7,9 +7,11 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create")" class="btn btn-default" title="Create">
+        <i class="fa fa-plus"></i> Create new album
+    </a>
 </p>
-<table class="table">
+<table class="table table-condensed">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Artist.Name)
@@ -47,9 +49,15 @@
             @Html.DisplayFor(modelItem => item.AlbumArtUrl)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AlbumId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })
+            <a href="@Url.Action("Edit", new { id=item.AlbumId })" class="btn btn-default" title="Edit">
+                <i class="fa fa-pencil"></i>
+            </a>
+            <a href="@Url.Action("Details", new { id=item.AlbumId })" class="btn btn-default" title="Details">
+                <i class="fa fa-info"></i>
+            </a>
+            <a href="@Url.Action("Delete", new { id=item.AlbumId })" class="btn btn-default" title="Delete">
+                <i class="fa fa-trash"></i>
+            </a>                    
         </td>
     </tr>
 }
